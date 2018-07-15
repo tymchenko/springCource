@@ -1,4 +1,4 @@
-package ua.study.spring.beans;
+package ua.study.spring.bean;
 
 public class Client {
     private String id;

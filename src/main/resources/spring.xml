@@ -5,14 +5,14 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="client" class="ua.study.spring.beans.Client">
+    <bean id="client" class="ua.study.spring.bean.Client">
         <constructor-arg value="1"/>
         <constructor-arg value="Ivan"/>
     </bean>
 
     <bean id="eventLogger" class="ua.study.spring.logger.ConsoleEventLogger"/>
 
-    <bean id="app" class="ua.study.spring.App">
+    <bean id="application" class="ua.study.spring.Application">
         <constructor-arg ref="client"/>
         <constructor-arg ref="eventLogger"/>
     </bean>
