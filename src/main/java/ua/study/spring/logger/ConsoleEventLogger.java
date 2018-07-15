@@ -1,8 +1,10 @@
 package ua.study.spring.logger;
 
+import ua.study.spring.bean.Event;
+
 public class ConsoleEventLogger implements EventLogger {
 
-    public void logEvent(String msg){
-        System.out.println(msg);
+    public void logEvent(Event event) {
+        event.toString();
     }
 }
