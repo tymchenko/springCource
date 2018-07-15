@@ -1,3 +1,5 @@
+package ua.study.spring.beans;
+
 public class Client {
     private String id;
     private String name;
