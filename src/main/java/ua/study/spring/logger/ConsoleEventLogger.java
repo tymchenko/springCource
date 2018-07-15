@@ -1,6 +1,6 @@
 package ua.study.spring.logger;
 
-import ua.study.spring.bean.Event;
+import ua.study.spring.beans.Event;
 
 public class ConsoleEventLogger implements EventLogger {
 

@@ -1,6 +1,6 @@
 package ua.study.spring;
 
-import ua.study.spring.bean.Client;
+import ua.study.spring.beans.Client;
 import ua.study.spring.logger.EventLogger;
 
 public class Application {
