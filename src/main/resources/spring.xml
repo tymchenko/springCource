@@ -5,7 +5,7 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <bean id="client" class="ua.study.spring.bean.Client">
+    <bean id="client" class="ua.study.spring.beans.Client">
         <constructor-arg value="1"/>
         <constructor-arg value="Ivan"/>
     </bean>
@@ -17,6 +17,13 @@
         <constructor-arg ref="eventLogger"/>
     </bean>
 
-    <bean id="event" class="ua.study.spring.bean.Event" scope="prototype"/>
+    <bean id="event" class="ua.study.spring.beans.Event" scope="prototype">
+        <constructor-arg>
+            <bean class = "java.util.Date"/>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
+        </constructor-arg>
+    </bean>
 
 </beans>

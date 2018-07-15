@@ -1,16 +1,18 @@
-package ua.study.spring.bean;
+package ua.study.spring.beans;
 
+import java.text.DateFormat;
 import java.util.Date;
 import java.util.Random;
 
 public class Event {
-    private int id;
+    private int id = new Random().nextInt();;
     private String msg;
     private Date date;
+    private DateFormat df;
 
-    public Event(){
-        id = new Random().nextInt();
-        date = new Date();
+    public Event(Date date, DateFormat df) {
+        this.date = date;
+        this.df = df;
     }
 
     public void setMsg(String msg) {
