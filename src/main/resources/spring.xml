@@ -17,4 +17,6 @@
         <constructor-arg ref="eventLogger"/>
     </bean>
 
+    <bean id="event" class="ua.study.spring.bean.Event" scope="prototype"/>
+
 </beans>
