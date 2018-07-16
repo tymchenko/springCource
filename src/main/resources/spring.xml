@@ -17,6 +17,10 @@
         <constructor-arg ref="eventLogger"/>
     </bean>
 
+    <bean id="fileEventLogger" class="ua.study.spring.logger.FileEventLogger">
+        <constructor-arg value="/Users/ivan/Documents/projects/springCource/src/main/resources/log.txt"/>
+    </bean>
+
     <bean id="event" class="ua.study.spring.beans.Event" scope="prototype">
         <constructor-arg>
             <bean class = "java.util.Date"/>
