@@ -21,6 +21,11 @@
         <constructor-arg value="/Users/ivan/Documents/projects/springCource/src/main/resources/log.txt"/>
     </bean>
 
+    <bean id="cashFileLogger" class="ua.study.spring.logger.CacheFileLogger" destroy-method="destroy">
+        <constructor-arg index="0" value="/Users/ivan/Documents/projects/springCource/src/main/resources/log.txt"/>
+        <constructor-arg index="1" value="20"/>
+    </bean>
+
     <bean id="event" class="ua.study.spring.beans.Event" scope="prototype">
         <constructor-arg>
             <bean class = "java.util.Date"/>
