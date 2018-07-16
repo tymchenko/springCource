@@ -17,7 +17,7 @@
         <constructor-arg ref="eventLogger"/>
     </bean>
 
-    <bean id="fileEventLogger" class="ua.study.spring.logger.FileEventLogger">
+    <bean id="fileEventLogger" class="ua.study.spring.logger.FileEventLogger" init-method="init">
         <constructor-arg value="/Users/ivan/Documents/projects/springCource/src/main/resources/log.txt"/>
     </bean>
 
