@@ -1,4 +1,4 @@
-package ua.study.spring.beans;
+package ua.study.spring.event;
 
 import java.text.DateFormat;
 import java.util.Date;

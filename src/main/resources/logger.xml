@@ -15,7 +15,16 @@
         <constructor-arg index="1" value="10"/>
     </bean>
 
-    <bean id="event" class="ua.study.spring.beans.Event" scope="prototype">
+    <bean id="combinedEventLogger" class="ua.study.spring.logger.CombinedEventLogger">
+        <constructor-arg>
+            <list>
+                <ref bean="eventLogger"/>
+                <ref bean="fileEventLogger"/>
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="event" class="ua.study.spring.event.Event" scope="prototype">
         <constructor-arg>
             <bean class = "java.util.Date"/>
         </constructor-arg>
