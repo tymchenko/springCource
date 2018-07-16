@@ -5,16 +5,14 @@
  		http://www.springframework.org/schema/beans
  		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <import resource="logger.xml"/>
+    <bean id="eventLogger" class="ua.study.spring.logger.ConsoleEventLogger"/>
 
-    <bean id="client" class="ua.study.spring.beans.Client">
-        <constructor-arg value="1"/>
-        <constructor-arg value="Ivan"/>
+    <bean id="fileEventLogger" class="ua.study.spring.logger.FileEventLogger" init-method="init">
+        <constructor-arg value="/Users/ivan/Documents/projects/springCource/src/main/resources/log.txt"/>
     </bean>
 
-    <bean id="application" class="ua.study.spring.Application">
-        <constructor-arg ref="client"/>
-        <constructor-arg ref="eventLogger"/>
+    <bean id="cashFileLogger" class="ua.study.spring.logger.CacheFileLogger" parent="fileEventLogger" destroy-method="destroy">
+        <constructor-arg index="1" value="10"/>
     </bean>
 
     <bean id="event" class="ua.study.spring.beans.Event" scope="prototype">

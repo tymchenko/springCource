@@ -1,20 +1,18 @@
 package ua.study.spring.logger;
 
-import ua.study.spring.beans.Event;
-
 import java.util.List;
 
 public class CacheFileLogger extends FileEventLogger {
     private int casheSize;
-    private List<Event> cache;
+    private List<String> cache;
 
     public CacheFileLogger(String fileName, int casheSize) {
         super(fileName);
         this.casheSize = casheSize;
     }
 
-    public void logEvent(Event event){
-        cache.add(event);
+    public void logEvent(String msg){
+        cache.add(msg);
         if(cache.size() == casheSize){
             writeEventFromCashe();
             cache.clear();
@@ -22,7 +20,7 @@ public class CacheFileLogger extends FileEventLogger {
     }
 
     private void writeEventFromCashe() {
-        for(Event event : cache){
+        for(String event : cache){
             super.logEvent(event);
         }
     }

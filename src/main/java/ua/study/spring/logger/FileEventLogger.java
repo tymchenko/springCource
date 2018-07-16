@@ -1,7 +1,6 @@
 package ua.study.spring.logger;
 
 import org.apache.commons.io.FileUtils;
-import ua.study.spring.beans.Event;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,9 +13,9 @@ public class FileEventLogger implements EventLogger {
 
     }
 
-    public void logEvent(Event event) {
+    public void logEvent(String msg) {
         try {
-            FileUtils.writeStringToFile(file, event.toString());
+            FileUtils.writeStringToFile(file, msg);
         } catch (IOException e) {
             e.printStackTrace();
         }

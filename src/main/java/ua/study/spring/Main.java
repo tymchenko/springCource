@@ -11,6 +11,6 @@ public class Main {
         Application application = (Application)ctx.getBean("application");
         application.logEvent();
 
-        ctx.close();
+//        ctx.close();
     }
 }
