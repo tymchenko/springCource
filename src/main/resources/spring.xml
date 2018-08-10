@@ -47,15 +47,6 @@
         </constructor-arg>
     </bean>
 
-    <bean id="event" class="ua.study.spring.event.Event" scope="prototype">
-        <constructor-arg>
-            <bean class = "java.util.Date"/>
-        </constructor-arg>
-        <constructor-arg>
-            <bean class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
-        </constructor-arg>
-    </bean>
-
     <bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateTimeInstance"/>
 
 </beans>
